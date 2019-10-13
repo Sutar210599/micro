@@ -45,9 +45,9 @@ void datawrt()
 void lcddata(unsigned char ch)
 {
     lcdport=ch & 0xf0;
-    daten();
+    datawrt();
     lcdport=(ch<<4) & 0xf0;
-    daten();
+    datawrt();
 }
 
 void cmdwrt(void)
@@ -62,9 +62,9 @@ void cmdwrt(void)
 void lcdcmd(unsigned char ch)
 {
     lcdport=ch & 0xf0;
-    cmden();
+    cmdwrt();
     lcdport=(ch<<4) & 0xf0;
-    cmden();
+    cmdwrt();
 }
 
 void lcdstring(char *str)
