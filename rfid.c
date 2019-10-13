@@ -2,7 +2,7 @@
 #include<string.h>
 #include<stdio.h>
 #define lcdport P1
-
+f
 sbit col4=P0^0;
 sbit col3=P0^1;
 sbit col2=P0^2;
