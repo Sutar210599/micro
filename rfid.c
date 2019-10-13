@@ -3,18 +3,18 @@
 #include<stdio.h>
 #define lcdport P1
 
-#sbit col4=P0^7;
-sbit col3=P0^6;
-sbit col2=P0^5;
-sbit col1=P0^4;
-#sbit row4=P0^0;
-sbit row3=P0^3;
-sbit row2=P0^2;
-sbit row1=P0^1;
 
-sbit rs=P1^0;
-sbit rw=P1^1;
-sbit en=P1^2;
+sbit col3=P1^6;
+sbit col2=P1^5;
+sbit col1=P1^4;
+
+sbit row3=P1^3;
+sbit row2=P1^2;
+sbit row1=P1^1;
+
+sbit rs=P0^0;
+sbit rw=P0^1;
+sbit en=P0^2;
 
 sbit m1=P2^4;
 sbit m2=P2^5;
@@ -112,7 +112,7 @@ void keypad()
     while(i<4)
     {
      col1=0;
-     col2=col3=col4=1;
+     col2=col3=1;
      if(!row1)
      {
         lcddata('1');
@@ -134,15 +134,10 @@ void keypad()
         while(!row3);
    }
      
-      #else if(!row4)
-     #{
-        #lcddata('*');
-        #pass[i++]='*';
-        #while(!row4);
-   }
+     
      
      col2=0;
-     col1=col3=col4=1;
+     col1=col3=1;
      if(!row1)
      {
         lcddata('2');
@@ -164,15 +159,10 @@ void keypad()
         while(!row3);
    }
      
-      else if(!row4)
-     {
-        lcddata('0');
-        pass[i++]='0';
-        while(!row4);
-   }
+      
      
      col3=0;
-     col1=col2=col4=1;
+     col1=col2=1;
      if(!row1)
      {
         lcddata('3');
@@ -194,14 +184,8 @@ void keypad()
         while(!row3);
    }
      
-      else if(!row4)
-     {
-        lcddata('#');
-        pass[i++]='#';
-        while(!row4);
-   }
      
-      col4=0;
+      
      col1=col3=col2=1;
      if(!row1)
      {
@@ -224,13 +208,8 @@ void keypad()
         while(!row3);
    }
      
-      else if(!row4)
-     {
-        lcddata('D');
-        pass[i++]='D';
-        while(!row4);
-   }
- } 
+     
+ }
      
 }
 
