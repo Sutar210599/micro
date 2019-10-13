@@ -3,14 +3,14 @@
 #include<stdio.h>
 #define lcdport P1
 
-sbit col4=P0^0;
-sbit col3=P0^1;
-sbit col2=P0^2;
-sbit col1=P0^3;
-sbit row4=P0^4;
-sbit row3=P0^5;
-sbit row2=P0^6;
-sbit row1=P0^7;
+#sbit col4=P0^7;
+sbit col3=P0^6;
+sbit col2=P0^5;
+sbit col1=P0^4;
+#sbit row4=P0^0;
+sbit row3=P0^3;
+sbit row2=P0^2;
+sbit row1=P0^1;
 
 sbit rs=P1^0;
 sbit rw=P1^1;
@@ -134,11 +134,11 @@ void keypad()
         while(!row3);
    }
      
-      else if(!row4)
-     {
-        lcddata('*');
-        pass[i++]='*';
-        while(!row4);
+      #else if(!row4)
+     #{
+        #lcddata('*');
+        #pass[i++]='*';
+        #while(!row4);
    }
      
      col2=0;
@@ -299,10 +299,12 @@ void main()
             delay(300);
             m1=0;
             m2=0;
-          }
-            else
+						}
+          
+            else{
             wrong();
-       
+						}
+					}
         else 
         {
            lcdcmd(1);
