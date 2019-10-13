@@ -79,9 +79,13 @@ void lcdstring(char *str)
 void lcd_init(void)
 {
     lcdcmd(0x02);
+    delay(10);
     lcdcmd(0x28);
+    delay(10);
     lcdcmd(0x0e);
+    delay(10);
     lcdcmd(0x01);
+    delay(10);
 }
 
 void uart_init()
