@@ -302,60 +302,7 @@ void main()
           }
             else
             wrong();
-        }
-        
-        else if(strncmp(rfid,"160066BD7AB7",12)==0)
-            {
-            keypad();
-            if(strncmp(pass,"4202",4)==0)
-            {
-            accept();
-            lcdcmd(1);
-            lcdstring("Access Granted ");
-            lcdcmd(0xc0);
-            lcdstring("Person2");
-            m1=1;
-            m2=0;
-            delay(300);
-            m1=0;
-            m2=0;
-            delay(200);
-            m1=0;
-            m2=1;
-            delay(300);
-            m1=0;
-            m2=0;
-          }
-            else
-            wrong();
-      }
-            
-                else if(strncmp(rfid,"160066203060",12)==0)
-            {
-    keypad();
-            if(strncmp(pass,"4203",4)==0)
-            {
-            accept();
-            lcdcmd(1);
-            lcdstring("Access Granted ");
-            lcdcmd(0xc0);
-            lcdstring("Person3");
-            m1=1;
-            m2=0;
-            delay(300);
-            m1=0;
-            m2=0;
-            delay(200);
-            m1=0;
-            m2=1;
-            delay(300);
-            m1=0;
-            m2=0;
-          }
-            else
-            wrong();
-      }
-
+       
         else 
         {
            lcdcmd(1);
