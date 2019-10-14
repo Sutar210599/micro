@@ -12,9 +12,9 @@ sbit row3=P1^3;
 sbit row2=P1^2;
 sbit row1=P1^1;
 
-sbit rs=P2^0;
-sbit rw=P2^1;
-sbit en=P2^2;
+sbit rs=P0^0;
+sbit rw=P0^1;
+sbit en=P0^2;
 
 sbit m1=P2^4;
 sbit m2=P2^5;
