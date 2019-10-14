@@ -7,7 +7,7 @@
 sbit col3=P1^7;
 sbit col2=P1^6;
 sbit col1=P1^5;
-sbit row4=p1^4
+sbit row4=p1^4;
 sbit row3=P1^3;
 sbit row2=P1^2;
 sbit row1=P1^1;
@@ -133,7 +133,12 @@ void keypad()
         pass[i++]='7';
         while(!row3);
    }
-     
+      else if(!row4)
+      {
+         lcddata('*');
+         pass[i++]='*';
+         while(!row4);
+      }
      
      
      col2=0;
@@ -159,7 +164,12 @@ void keypad()
         while(!row3);
    }
      
-      
+      else if(!row4)
+     {
+        lcddata('0');
+        pass[i++]='0';
+        while(!row4);
+   }
      
      col3=0;
      col1=col2=1;
@@ -183,7 +193,12 @@ void keypad()
         pass[i++]='9';
         while(!row3);
    }
-     
+      else if(!row4)
+     {
+        lcddata('#');
+        pass[i++]='#';
+        while(!row4);
+   }
      
       
      col1=col3=col2=1;
@@ -208,7 +223,12 @@ void keypad()
         while(!row3);
    }
      
-     
+     else if(!row4)
+     {
+        lcddata('D');
+        pass[i++]='D';
+        while(!row4);
+   }
  }
      
 }
