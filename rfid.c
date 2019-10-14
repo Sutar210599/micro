@@ -4,10 +4,10 @@
 #define lcdport P2
 
 
-sbit col3=P1^6;
-sbit col2=P1^5;
-sbit col1=P1^4;
-
+sbit col3=P1^7;
+sbit col2=P1^6;
+sbit col1=P1^5;
+sbit row4=p1^4
 sbit row3=P1^3;
 sbit row2=P1^2;
 sbit row1=P1^1;
