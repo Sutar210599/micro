@@ -1,7 +1,7 @@
 #include<reg51.h>
 #include<string.h>
 #include<stdio.h>
-#define lcdport P2
+#define lcdport P0
 
 
 sbit col3=P1^7;
@@ -12,9 +12,9 @@ sbit row3=P1^3;
 sbit row2=P1^2;
 sbit row1=P1^1;
 
-sbit rs=P0^0;
-sbit rw=P0^1;
-sbit en=P0^2;
+sbit rs=P2^0;
+sbit rw=P2^1;
+sbit en=P2^2;
 
 sbit m1=P2^4;
 sbit m2=P2^5;
@@ -44,9 +44,9 @@ void datawrt()
 
 void lcddata(unsigned char ch)
 {
-    lcdport=ch & 0xf0;
+    lcdport=ch;
     datawrt();
-    lcdport=(ch<<4) & 0xf0;
+    lcdport=(ch<<4);
     datawrt();
 }
 
@@ -61,9 +61,9 @@ void cmdwrt(void)
 
 void lcdcmd(unsigned char ch)
 {
-    lcdport=ch & 0xf0;
+    lcdport=ch;
     cmdwrt();
-    lcdport=(ch<<4) & 0xf0;
+    lcdport=(ch<<4);
     cmdwrt();
 }
 
