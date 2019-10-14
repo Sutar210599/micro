@@ -1,7 +1,7 @@
 #include<reg51.h>
 #include<string.h>
 #include<stdio.h>
-#define lcdport P1
+#define lcdport P2
 
 
 sbit col3=P1^6;
